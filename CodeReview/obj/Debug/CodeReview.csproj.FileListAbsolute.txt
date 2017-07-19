@@ -1,0 +1,2 @@
+C:\Users\Mauro\Google Drive\Desarrollo\c#\CodeReview\CodeReview\bin\Debug\CodeReview.exe.config
+F:\_Cloud Boxes\GoogleDrive\Desarrollo\c#\CodeReview\CodeReview\bin\Debug\CodeReview.exe.config
