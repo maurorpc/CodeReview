@@ -1,2 +1,9 @@
 C:\Users\Mauro\Google Drive\Desarrollo\c#\CodeReview\CodeReview\bin\Debug\CodeReview.exe.config
 F:\_Cloud Boxes\GoogleDrive\Desarrollo\c#\CodeReview\CodeReview\bin\Debug\CodeReview.exe.config
+C:\Users\Mauro\Google Drive\Desarrollo\c#\CodeReview\CodeReview\obj\Debug\CodeReview.csprojResolveAssemblyReference.cache
+C:\Users\Mauro\Google Drive\Desarrollo\c#\CodeReview\CodeReview\bin\Debug\CodeReview.exe
+C:\Users\Mauro\Google Drive\Desarrollo\c#\CodeReview\CodeReview\bin\Debug\CodeReview.pdb
+C:\Users\Mauro\Google Drive\Desarrollo\c#\CodeReview\CodeReview\obj\Debug\CodeReview.exe
+C:\Users\Mauro\Google Drive\Desarrollo\c#\CodeReview\CodeReview\obj\Debug\CodeReview.pdb
+F:\_Cloud Boxes\GoogleDrive\Desarrollo\c#\CodeReview\CodeReview\obj\Debug\CodeReview.exe
+F:\_Cloud Boxes\GoogleDrive\Desarrollo\c#\CodeReview\CodeReview\obj\Debug\CodeReview.pdb
