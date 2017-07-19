@@ -10,13 +10,20 @@ namespace CodeReview.Database
     class RemoteServer : LogsDataContext
     {
         private static string connectionString = new Config.Application().ConnectionString;
-
+        private bool success = false;
+        public bool Success
+        {
+            get
+            {
+                return success;
+            }
+        }
         public RemoteServer() : base(connectionString)
         {
             //this.OnCreated();
         }
 
-        public bool NewLog(int type, string message = null)
+        public void NewLog(int type, string message, DateTime datetime)
         {
             try
             {
@@ -26,17 +33,18 @@ namespace CodeReview.Database
                     {
                         message = message,
                         type = type,
-                        datetime = DateTime.Now
+                        datetime = datetime
                     };
                     db.Logs.InsertOnSubmit(newLog);
                     db.SubmitChanges();
                 }
-                return true;
+                success = true;
             }
             catch
             {
-                return false;
+                //
             }
         }
+
     }
 }
