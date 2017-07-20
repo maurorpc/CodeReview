@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Culture.cs" />
     <Compile Include="Config\Application.cs" />
     <Compile Include="Database\Logs.designer.cs">
       <AutoGen>True</AutoGen>
@@ -65,6 +66,7 @@
       <DependentUpon>Logs.dbml</DependentUpon>
     </Compile>
     <Compile Include="Database\RemoteServer.cs" />
+    <Compile Include="FileManager\LogFile.cs" />
     <Compile Include="JobLogger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,6 +113,10 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="sql\database.sql" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

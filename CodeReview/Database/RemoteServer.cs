@@ -11,16 +11,18 @@ namespace CodeReview.Database
     {
         private static string connectionString = new Config.Application().ConnectionString;
         private bool success = false;
+
+        public RemoteServer() : base(connectionString)
+        {
+            //this.OnCreated();
+        }
+
         public bool Success
         {
             get
             {
                 return success;
             }
-        }
-        public RemoteServer() : base(connectionString)
-        {
-            //this.OnCreated();
         }
 
         public void NewLog(int type, string message, DateTime datetime)
@@ -42,7 +44,7 @@ namespace CodeReview.Database
             }
             catch
             {
-                //
+                success = false;
             }
         }
 

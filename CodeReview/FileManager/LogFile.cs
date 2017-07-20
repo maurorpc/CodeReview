@@ -12,13 +12,7 @@ namespace CodeReview.FileManager
     class LogFile
     {
         private string directoryPath = new Config.Application().DirectoryPath;
-        private string prefix;
-        private string message;
-        private string extension;
-        private string filename;
-        private string dateString;
-        private bool success = false;
-
+        bool success = false;
         public bool Success
         {
             get
@@ -27,39 +21,34 @@ namespace CodeReview.FileManager
             }
         }
 
-
-        public LogFile(string dateString, string message, string prefix = "LogFile_", string extension = "txt")
+        public LogFile()
         {
-            this.dateString = dateString;
-            this.message = message;
-            this.prefix = prefix;
-            this.extension = extension;
         }
 
-        public void NewLog()
+        public void NewLog(string dateString, string message, string prefix = "LogFile_", string extension = "txt")
         {
+            try
+            {
+                string fileName = String.Format("{0}{1}{2}{3}{4}", prefix, "_", dateString, ".", extension);
+                string fileDirectory = directoryPath + fileName;
+                if (!ManageFile.Exists(fileDirectory))
+                {
+                    var textfile = ManageFile.Create(fileDirectory);
+                    textfile.Close();
+                }
 
-            //create file manager to logfile
-            /*if (!System.IO.File.Exists(System.Configuration.ConfigurationManager.AppSettings["LogFileDirectory"] + "LogFile" + DateTime.Now.ToShortDateString() + ".txt"))
-            {
-                l = System.IO.File.ReadAllText(System.Configuration.ConfigurationManager.AppSettings["LogFileDirectory"] + "LogFile" + DateTime.Now.ToShortDateString() + ".txt");
-            }*/
-            // l = l + DateTime.Now.ToShortDateString() + message; method to log
-            string fileName = String.Format("{0}{1}{2}{3}{4}", prefix, "_", dateString, ".", extension);
-            string fileDirectory = directoryPath + fileName;
-            if(!ManageFile.Exists(fileDirectory))
-            {
-                ManageFile.Create(fileDirectory);
+                using (TextWriter file = new StreamWriter(fileDirectory))
+                {
+                    file.WriteLine(message);
+                    file.Close();
+                }
+
+                success = true;
             }
-
-            using (TextWriter tw = new StreamWriter(fileDirectory))
+            catch
             {
-                tw.WriteLine(message);
-                tw.Close(); 
+                success = false;
             }
-
-            success = true;
-            //trycatch
         }
 
 
